@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {mobile} from "../responsive";
 import { NavLink } from "react-router-dom";
+import LoginForm from '../components/loginForm'
 
 const Container = styled.div`
   width: 100vw;
@@ -29,28 +30,6 @@ const Title = styled.h1`
   font-weight: 300;
 `;
 
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-
-const Input = styled.input`
-  flex: 1;
-  min-width: 40%;
-  margin: 10px 0;
-  padding: 10px;
-`;
-
-const Button = styled.button`
-  width: 40%;
-  border: none;
-  padding: 15px 20px;
-  background-color: teal;
-  color: white;
-  cursor: pointer;
-  margin-bottom: 10px;
-`;
-
 const Link = styled.a`
   margin: 5px 0px;
   font-size: 12px;
@@ -63,13 +42,9 @@ const Login = () => {
     <Container>
       <Wrapper>
         <Title>SIGN IN</Title>
-        <Form>
-          <Input placeholder="username" />
-          <Input placeholder="password" />
-          <Button>LOGIN</Button>
-          <Link>DO NOT YOU REMEMBER THE PASSWORD?</Link>
-          <Link><NavLink to= '/register'>CREATE A NEW ACCOUNT</NavLink></Link>
-        </Form>
+          <LoginForm />
+        <Link>DON'T HAEV AN ACCOUNT?</Link>
+        <Link><NavLink to= '/register'> CREATE AN ACCOUNT</NavLink></Link>
       </Wrapper>
     </Container>
   );
